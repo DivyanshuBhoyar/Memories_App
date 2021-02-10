@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar";
 import "./App.css";
+import React from "react";
 import { Button } from "grommet";
 import { Google } from "grommet-icons";
 import { auth } from "./firebase/config";
@@ -9,7 +10,6 @@ import MemoryPage from "./pages/MemoryPage";
 
 function App() {
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <>
       <NavBar />

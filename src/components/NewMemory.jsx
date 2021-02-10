@@ -10,6 +10,7 @@ export default function NewMemory() {
   const initialFormState = {
     title: "",
     body: "",
+    date: null,
   };
   const [values, setValues] = useState(initialFormState);
   const [overlayIsActive, setoverlayIsActive] = useState(false);
@@ -19,11 +20,16 @@ export default function NewMemory() {
     await memoriesRef.add({
       title: values.title,
       body: values.body,
-      uid,
-      photoURL,
+      user: {
+        uid,
+        photoURL,
+      },
+      upvotes: 0,
+      tagged: [],
       createdAt: timestamp(),
+      date: values.date !== null ? values.date : timestamp(),
     });
-    setoverlayIsActive(false);
+    handleClose();
   }
   function handleChange(e) {
     setValues({

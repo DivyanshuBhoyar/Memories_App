@@ -23,7 +23,7 @@ export default function MemoryPage() {
         {memoriesData &&
           memoriesData.map((post) => (
             <div className="card-wrap">
-              <MemoryCard kep={post.id} title={post.title} body={post.body} />
+              <MemoryCard key={post.id} post={post} />
             </div>
           ))}
       </FadeIn>
