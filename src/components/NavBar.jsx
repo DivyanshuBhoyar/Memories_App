@@ -34,9 +34,9 @@ export default function NavBar() {
               </Grommet>
             </div>
           )}
-          <div className="navitem">
+          {/* <div className="navitem">
             <h4>About</h4>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

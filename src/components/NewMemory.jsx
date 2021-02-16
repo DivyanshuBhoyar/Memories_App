@@ -4,16 +4,19 @@ import { Add } from "grommet-icons";
 import React, { useState } from "react";
 
 import { auth, firestore, timestamp } from "../firebase/config";
+import { FormatDate } from "./DateInput";
+import EmojiPicker from "./EmojiPicker";
 
 export default function NewMemory() {
   const memoriesRef = firestore.collection("memories");
   const initialFormState = {
     title: "",
     body: "",
-    date: null,
   };
   const [values, setValues] = useState(initialFormState);
+  const [memorydate, setmemorydate] = useState(new Date().toISOString());
   const [overlayIsActive, setoverlayIsActive] = useState(false);
+  const [emotion, setEmotion] = useState(null);
 
   async function addMemory() {
     const { uid, photoURL } = auth.currentUser;
@@ -25,27 +28,36 @@ export default function NewMemory() {
         photoURL,
       },
       upvotes: 0,
+      emotion: emotion,
       tagged: [],
       createdAt: timestamp(),
-      date: values.date !== null ? values.date : timestamp(),
+      date: timestamp(memorydate),
     });
     handleClose();
   }
+
   function handleChange(e) {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
   }
+
   function handleClose(e) {
     setValues(initialFormState);
+    setEmotion(null);
     setoverlayIsActive(false);
   }
 
   return (
     <>
       <div
-        style={{ height: "4vw", width: "4vw", borderRadius: "50%" }}
+        style={{
+          height: "4vw",
+          width: "4vw",
+          borderRadius: "50%",
+          margin: "0 auto",
+        }}
         className="btn-wrap"
       >
         <Button
@@ -88,13 +100,27 @@ export default function NewMemory() {
                   required
                 />
 
+                <FormField label="Date" as={null}>
+                  <FormatDate
+                    pad="small"
+                    memorydate={memorydate}
+                    setmemorydate={setmemorydate}
+                  />
+                </FormField>
+                <Box width="100%">
+                  <EmojiPicker emotion={emotion} setemotion={setEmotion} />
+                </Box>
                 <Box
                   direction="row"
                   justify="between"
-                  margin={{ top: "medium" }}
+                  margin={{ top: "small" }}
                 >
                   <Button label="Cancel" onClick={handleClose} />
-                  <Button type="reset" label="Reset" />
+                  <Button
+                    type="reset"
+                    label="Reset"
+                    onClick={() => setEmotion(null)}
+                  />
                   <Button
                     onClick={addMemory}
                     type="submit"

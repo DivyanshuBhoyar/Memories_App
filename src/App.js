@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       <NavBar />
+
       {user ? <MemoryPage /> : <SignIn />}
     </>
   );

@@ -7,18 +7,15 @@ export default function taggedgroup() {
       <Stack anchor="right" margin={{ left: "xlarge" }}>
         <Avatar
           size="small"
-          border={{ color: "white", size: "small" }}
           src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb"
         />
         <Avatar
           size="small"
-          border={{ color: "red", size: "small" }}
           src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb"
           margin={{ right: "small" }}
         />
         <Avatar
           size="small"
-          border={{ color: "purple", size: "small" }}
           src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb"
           margin={{ right: "medium" }}
         />

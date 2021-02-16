@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -16,21 +16,19 @@ import TaggedGroup from "./taggedgroup";
 import { firestore } from "../firebase/config";
 
 export default function MemoryCard({ post }) {
-  const { title, body, upvotes, user, date } = post;
+  const { title, body, emotion, upvotes, user, date } = post;
+  const event_date = date && moment(date.toDate()).format("MMMM Do YY");
 
   async function handleUpvote(e) {
-    console.log("upvoted");
     const memoryRef = firestore.collection("memories").doc(post.id);
     const res = await memoryRef.update({ upvotes: upvotes + 1 });
-    console.log(res);
   }
-  console.log(post);
-  const event_date = post && moment(date.toDate()).format("MMMM Do YY");
 
   return (
     <div>
       <Grommet>
         <StyledCard
+          emotion={emotion}
           background="light-1"
           elevation="medium"
           height="auto"
@@ -40,10 +38,10 @@ export default function MemoryCard({ post }) {
           <WhiteOverlay />
           <StyledCardHeader pad="medium">
             <div className="">{title}</div>
-            <div className="">
+            {/* <div className="">
               {" "}
               <TaggedGroup />{" "}
-            </div>
+            </div> */}
           </StyledCardHeader>
           <StyledCardBody
             pad={{
@@ -64,9 +62,7 @@ export default function MemoryCard({ post }) {
               />
               <div className="upvotes">{upvotes}</div>
             </StyledUpvotes>
-
             <StyledDate className="date">{event_date}</StyledDate>
-
             <Avatar size="small" src={user.photoURL} />
           </StyledCardFooter>
         </StyledCard>
@@ -101,15 +97,17 @@ const StyledUpvotes = styled.div`
   color: red;
 `;
 const StyledCard = styled(Card)`
-  background-image: url(${bg});
+  /* background-image: url(${bg}); */
+  background-image: url(${(props) => (props.emotion ? props.emotion : bg)});
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 10px 10px 20px #b5b5b5, -10px -10px 20px #ffffff;
 `;
 const WhiteOverlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: 2;
 `;
 const StyledCardFooter = styled(CardFooter)`
