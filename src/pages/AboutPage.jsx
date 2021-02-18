@@ -16,7 +16,7 @@ export default function AboutPage() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-
+        flexFlow: "row wrap",
         alignItems: "center",
         fontSize: "2rem",
       }}
@@ -27,17 +27,22 @@ export default function AboutPage() {
         align="center"
         justify="center"
         pad="medium"
+        wrap
       >
         {/* <p>Current Version : 1.0 </p> */}
-        Created with{" "}
+        Created with
+        <div style={{ flexBasis: "100%" }}></div>
         <img
           src="https://cdn.discordapp.com/attachments/792429986094907392/811865640423915550/icons8-google-firebase-console-50.png"
           alt="firebase logo"
-        />{" "}
-        <Reactjs size="50px" color="plain" />{" "}
-        <Grommet size="50px" color="plain" /> {"  "}
-        <span>by Divyanshu Bhoyar.</span>
+        />
+        <Reactjs size="50px" color="plain" />
+        <Grommet size="50px" color="plain" />
       </Box>
+      <div>
+        <center>by Divyanshu Bhoyar.</center>{" "}
+      </div>
+      <div style={{ flexBasis: "100%" }}></div>
       <div className="">
         <Anchor
           style={{ margin: "0.3rem" }}
