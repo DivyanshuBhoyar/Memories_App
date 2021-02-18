@@ -4,7 +4,7 @@ import "firebase/auth";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    apiKey: "AIzaSyCt50k__Ew6-W24wjqqrPfy7WUEe2TstC0",
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
     projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
