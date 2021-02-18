@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "grommet";
+import { Anchor, Box } from "grommet";
 import { Github, Grommet, LinkedinOption, Reactjs } from "grommet-icons";
 
 export default function AboutPage() {
@@ -39,11 +39,18 @@ export default function AboutPage() {
         <span>by Divyanshu Bhoyar.</span>
       </Box>
       <div className="">
-        <LinkedinOption
+        <Anchor
+          style={{ margin: "0.3rem" }}
           href="https://www.linkedin.com/in/divyanshu-bhoyar/"
-          color="plain"
-        />{" "}
-        <Github href="https://github.com/DivyanshuBhoyar" color="plain" />
+        >
+          <LinkedinOption color="plain" />
+        </Anchor>
+        <Anchor
+          style={{ margin: "0.3rem" }}
+          href="https://github.com/DivyanshuBhoyar"
+        >
+          <Github color="plain" />
+        </Anchor>
       </div>
     </div>
   );
