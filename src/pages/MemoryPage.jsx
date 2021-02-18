@@ -18,7 +18,11 @@ export default function MemoryPage() {
   return (
     <div className="App">
       <div
-        style={{ zIndex: 100, margin: "0 auto" }}
+        style={{
+          zIndex: 100,
+          position: "fixed",
+          left: "45vw",
+        }}
         className="newMemoryTrigger"
       >
         <NewMemory />

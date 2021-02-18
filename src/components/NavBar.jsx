@@ -2,6 +2,7 @@ import { Button, Grommet } from "grommet";
 import React from "react";
 import "../App.css";
 import { auth } from "../firebase/config";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const theme = {
@@ -34,9 +35,15 @@ export default function NavBar() {
               </Grommet>
             </div>
           )}
-          {/* <div className="navitem">
-            <h4>About</h4>
-          </div> */}
+          <div className="navitem">
+            <NavLink
+              to="/about"
+              style={{ textDecoration: "none", color: "whitesmoke" }}
+            >
+              {" "}
+              About{" "}
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

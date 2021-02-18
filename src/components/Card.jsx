@@ -87,7 +87,7 @@ const StyledCardBody = styled(CardBody)`
   font-family: "Montserrat";
   color: #000;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.15;
 `;
 const StyledUpvotes = styled.div`
   display: flex;
@@ -107,7 +107,7 @@ const WhiteOverlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 2;
 `;
 const StyledCardFooter = styled(CardFooter)`
@@ -115,8 +115,9 @@ const StyledCardFooter = styled(CardFooter)`
   align-items: center;
   justify-content: space-between;
   z-index: 10;
+
   padding: 0 0.75em 0 0;
-  background-color: #eaffed;
+  background-color: rgba(49, 255, 80, 0.589);
 `;
 const StyledDate = styled.div`
   margin-right: 0.8em;
@@ -124,5 +125,5 @@ const StyledDate = styled.div`
   font-size: 0.72em;
   text-transform: uppercase;
   font-family: "Source Sans Pro";
-  color: #aaadad;
+  color: #ffffff;
 `;

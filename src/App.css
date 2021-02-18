@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 .App {
-  background-color: #ffe8fdee;
+  background-color: #f7ccf3c2;
 }
 .navBar-wrap0 {
   width: 100vw;
 
   background-image: linear-gradient(65deg, #000000 0%, #414141 74%);
-  padding: 0.2em 3rem;
+  padding: 0.3em 1.5rem;
 }
 .title {
   color: white;
@@ -21,7 +21,6 @@
   z-index: 100;
   justify-content: space-between;
   align-items: center;
-  z-index: -1;
 }
 .navitem {
   color: white;
@@ -31,7 +30,7 @@
   flex-flow: row wrap;
 
   width: 95vw;
-  margin: 0.75em auto;
+  margin: 0em auto;
 
   padding: 0.5rem;
   justify-content: space-evenly;
@@ -51,7 +50,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
 }
 .newMemoryTrigger {
   position: fixed;

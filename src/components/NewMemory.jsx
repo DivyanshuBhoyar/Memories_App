@@ -56,7 +56,6 @@ export default function NewMemory() {
           height: "4vw",
           width: "4vw",
           borderRadius: "50%",
-          margin: "0 auto",
         }}
         className="btn-wrap"
       >
@@ -66,7 +65,7 @@ export default function NewMemory() {
           icon={<Add />}
           onClick={(e) => setoverlayIsActive(true)}
         />
-      </div>
+      </div>{" "}
       {overlayIsActive && (
         <Layer
           modal

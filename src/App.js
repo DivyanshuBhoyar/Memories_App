@@ -9,11 +9,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import MemoryPage from "./pages/MemoryPage";
 
 function App() {
-  const [user] = useAuthState(auth);
+  let [user] = useAuthState(auth);
+
   return (
     <>
       <NavBar />
-
+      {/* <AboutPage /> */}
       {user ? <MemoryPage /> : <SignIn />}
     </>
   );
