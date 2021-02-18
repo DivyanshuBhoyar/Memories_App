@@ -35,10 +35,12 @@ export default function AboutPage() {
         <img
           src="https://cdn.discordapp.com/attachments/792429986094907392/811865640423915550/icons8-google-firebase-console-50.png"
           alt="firebase logo"
+          style={{ margin: "0.6rem" }}
         />
-        <Reactjs size="50px" color="plain" />
-        <Grommet size="50px" color="plain" />
-      </Box>
+        <Reactjs style={{ margin: "0.6rem" }} size="50px" color="plain" />
+        <Grommet style={{ margin: "0.6rem" }} size="50px" color="plain" />
+      </Box>{" "}
+      <div style={{ flexBasis: "100%" }}></div>
       <div>
         <center>by Divyanshu Bhoyar.</center>{" "}
       </div>
