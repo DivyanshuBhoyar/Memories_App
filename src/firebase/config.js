@@ -5,11 +5,11 @@ import "firebase/auth";
 if (!firebase.apps.length) {
   firebase.initializeApp({
     apiKey: "AIzaSyCt50k__Ew6-W24wjqqrPfy7WUEe2TstC0",
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    authDomain: "memories-8d7b6.firebaseapp.com",
+    projectId: "memories-8d7b6",
+    storageBucket: "memories-8d7b6.appspot.com",
+    messagingSenderId: "793117001141",
+    appId: "1:793117001141:web:7646db0b34c8d928c005fc",
   });
 } else {
   firebase.app(); // if already initialized, use that one
